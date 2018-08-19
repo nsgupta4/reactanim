@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import TodoList from './components/TodoList';
 import Box from './components/Box';
+import  { TransitionGroup, CSSTransition } from 'react-transition-group';
 class App extends Component {
-    componentWillEnter(callback){
-      console.log('here');
-    }
   state = {
     todos: [
       {task: "Wash Dishes"},
@@ -49,9 +47,11 @@ class App extends Component {
         </form>
         <button onClick={this.handleBox}>Toggle Box</button>
         <TodoList todos={this.state.todos} handleDelete={this.handleDelete}/>
-        <div>
-          <Box isShowing={this.state.boxShowing} key={Math.random(2)}/>
-        </div>
+        <CSSTransition
+          classNames="fade"
+          timeout={3000}>
+          <Box isShowing={this.state.boxShowing}/>
+          </CSSTransition>
         
       </div>
     );

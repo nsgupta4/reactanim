@@ -1,7 +1,7 @@
 import React from 'react'
 import TodoItem from './TodoItem'
 import './TodoList.css';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import{ TransitionGroup, CSSTransition }  from 'react-transition-group';
 
 class TodoList extends React.Component {
   render() {
@@ -14,12 +14,11 @@ class TodoList extends React.Component {
     return (
       <div>
         <div>
-          <ReactCSSTransitionGroup
-          transitionName="fade"
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={300}>
-          {listItems}
-        </ReactCSSTransitionGroup>
+          
+          
+           {listItems}
+          
+        
         </div>
       </div>
     )

@@ -4,8 +4,8 @@
     background: linear-gradient(45deg, #ED1C24, #FCEE21);
     margin: 0 auto;
     transform-origin: left;
-   }
-   .spicy-enter {
+}
+.spicy-enter {
 	opacity: .01;
 	transform: scaleX(0) translateY(100px);
 }
